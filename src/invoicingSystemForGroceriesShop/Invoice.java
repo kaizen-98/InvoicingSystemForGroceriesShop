@@ -2,21 +2,81 @@ package invoicingSystemForGroceriesShop;
 
 public class Invoice {
 
-	CustomeInfo customeInfo = new CustomeInfo();
-		private Item[] items;
+
+		private String customerName;
+		private String phoneNumber;
+		private String invoiceDate;
+		private int ItemsiD;
 	    private int numberOfItems;
 	    private double totalAmount;
 	    private double paidAmount;
 	    private double balance;
 
-	    public Invoice() {
-	        items = new Item[10];
-	    }
-	
-	    public void addItem(Item item) {
-	        items[numberOfItems++] = item;
-	        totalAmount += item.getQtyAmount();
+	    public void setCustomerName(String customerName) {
+	        this.customerName = customerName;
 	    }
 
+	    public void setPhoneNumber(String phoneNumber) {
+	        this.phoneNumber = phoneNumber;
+	    }
+
+	    public void setInvoiceDate(String invoiceDate) {
+	        this.invoiceDate = invoiceDate;
+	    }
+
+		public String getCustomerName() {
+			return customerName;
+		}
+
+		public String getPhoneNumber() {
+			return phoneNumber;
+		}
+
+		public String getInvoiceDate() {
+			return invoiceDate;
+		}
+
+		public int getNumberOfItems() {
+			return numberOfItems;
+		}
+
+		public void setNumberOfItems(int numberOfItems) {
+			this.numberOfItems = numberOfItems;
+		}
+
+		public double getTotalAmount() {
+			return totalAmount;
+		}
+
+		public void setTotalAmount(double totalAmount) {
+			this.totalAmount = totalAmount;
+		}
+
+		public double getPaidAmount() {
+			return paidAmount;
+		}
+
+		public void setPaidAmount(double paidAmount) {
+			this.paidAmount = paidAmount;
+		}
+
+		public double getBalance() {
+			return balance;
+		}
+
+		public void setBalance(double balance) {
+			this.balance = balance;
+		}
+
+		public int getItemsiD() {
+			return ItemsiD;
+		}
+
+		public void setItemsiD(int itemsiD) {
+			ItemsiD = itemsiD;
+		}
+		
+		
+	    
 	   
 }

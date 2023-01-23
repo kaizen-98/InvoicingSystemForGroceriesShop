@@ -22,22 +22,23 @@ public class GroceriesShop {
 	            switch (choice) {
 	                case 1:
 	                    System.out.print("Enter customer full name: ");
-	                    invoice.customeInfo.setCustomerName(sc.nextLine());
+	                    invoice.setCustomerName(sc.nextLine());
 	                    System.out.print("Enter customer phone number: ");
-	                    invoice.customeInfo.setPhoneNumber(sc.nextLine());
+	                    invoice.setPhoneNumber(sc.nextLine());
 	                    System.out.print("Enter invoice date: ");
-	                    invoice.customeInfo.setInvoiceDate(sc.nextLine());
+	                    invoice.setInvoiceDate(sc.nextLine());
 	                    break;
 	                case 2:
 	                    System.out.print("Enter item ID: ");
-	                    String id = sc.nextLine();
+	                    int id = sc.nextInt();
+	                    invoice.setItemsiD(id);
 	                    System.out.print("Enter item name: ");
 	                    String name = sc.nextLine();
 	                    System.out.print("Enter unit price: ");
 	                    double price = sc.nextDouble();
 	                    System.out.print("Enter quantity: ");
 	                    int qty = sc.nextInt();
-	                    invoice.addItem(new Item(id, name, price, qty));
+	                  
 	                    break;
 	                case 3:
 	                    System.out.print("Enter item ID to remove: ");
