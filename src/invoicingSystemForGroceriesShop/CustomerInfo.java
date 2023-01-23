@@ -40,5 +40,9 @@ public class CustomerInfo {
 		  itemlist.remove(a);
 		  return;
 	  }
+	public int update(int b) {
+		item = itemlist.get(b);
+		return b;
+	}
 	
 }

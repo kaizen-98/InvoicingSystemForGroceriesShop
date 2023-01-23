@@ -60,10 +60,11 @@ public class GroceriesShop {
 	                    break;
 	                case 4:
 	                    System.out.print("Enter item ID to update: ");
-	               //     id = sc.nextLine();
+	                    int b = sc.nextInt();
+	                    invoice.customerInfo.update(b);
 	                    System.out.print("Enter new quantity: ");
 	                    qty = sc.nextInt();
-	                //    invoice.updateItem(id, qty);
+	               
 	                    break;
 	                case 5:
 	               //     invoice.printInvoice();
