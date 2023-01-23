@@ -1,12 +1,16 @@
 package invoicingSystemForGroceriesShop;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+
 
 public class GroceriesShop {
 
 	public static void main(String[] args) {
 		
 		  Scanner sc = new Scanner(System.in);
+		  ArrayList<Item> item = new ArrayList<Item>();
 	        Invoice invoice = new Invoice();
 
 	        while (true) {
@@ -34,11 +38,13 @@ public class GroceriesShop {
 	                    invoice.setItemsiD(id);
 	                    System.out.print("Enter item name: ");
 	                    String name = sc.nextLine();
+	                    invoice.setCustomerName(name);
 	                    System.out.print("Enter unit price: ");
 	                    double price = sc.nextDouble();
+	                    invoice.setPrice(price);
 	                    System.out.print("Enter quantity: ");
 	                    int qty = sc.nextInt();
-	                  
+	                    invoice.setQty(qty);
 	                    break;
 	                case 3:
 	                    System.out.print("Enter item ID to remove: ");
@@ -57,6 +63,7 @@ public class GroceriesShop {
 	                case 6:
 	                    return;
 	            }
+	            item.add(invoice);
 	        }
 		
 		

@@ -7,6 +7,8 @@ public class Invoice {
 		private String phoneNumber;
 		private String invoiceDate;
 		private int ItemsiD;
+		private double price;
+		private int qty;
 	    private int numberOfItems;
 	    private double totalAmount;
 	    private double paidAmount;
@@ -74,6 +76,22 @@ public class Invoice {
 
 		public void setItemsiD(int itemsiD) {
 			ItemsiD = itemsiD;
+		}
+
+		public double getPrice() {
+			return price;
+		}
+
+		public void setPrice(double price) {
+			this.price = price;
+		}
+
+		public int getQty() {
+			return qty;
+		}
+
+		public void setQty(int qty) {
+			this.qty = qty;
 		}
 		
 		
