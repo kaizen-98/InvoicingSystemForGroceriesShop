@@ -10,7 +10,7 @@ public class GroceriesShop {
 	public static void main(String[] args) {
 		
 		  Scanner sc = new Scanner(System.in);
-		  ArrayList<Item> item = new ArrayList<Item>();
+		  ArrayList<Invoice> invoiceList = new ArrayList<Invoice>();
 	        Invoice invoice = new Invoice();
 
 	        while (true) {
@@ -25,45 +25,53 @@ public class GroceriesShop {
 
 	            switch (choice) {
 	                case 1:
+	                	CustomerInfo customerInfo = new CustomerInfo();
 	                    System.out.print("Enter customer full name: ");
-	                    invoice.setCustomerName(sc.nextLine());
+	                    String name = sc.next();
+	                    customerInfo.setCustomerName(name);
 	                    System.out.print("Enter customer phone number: ");
-	                    invoice.setPhoneNumber(sc.nextLine());
+	                    int phonenu = sc.nextInt();
+	                    customerInfo.setPhoneNumber(phonenu);
 	                    System.out.print("Enter invoice date: ");
-	                    invoice.setInvoiceDate(sc.nextLine());
+	                    int datenu = sc.nextInt();
+	                    customerInfo.setInvoiceDate(datenu);
+	                    invoice.CustomerList.add(customerInfo);
 	                    break;
 	                case 2:
+	                	Item item = new Item();
 	                    System.out.print("Enter item ID: ");
 	                    int id = sc.nextInt();
-	                    invoice.setItemsiD(id);
+	                    item.setItemsiD(id);
 	                    System.out.print("Enter item name: ");
-	                    String name = sc.nextLine();
-	                    invoice.setCustomerName(name);
+	                    String nameitem = sc.next();
+	                    item.setName(nameitem);
 	                    System.out.print("Enter unit price: ");
 	                    double price = sc.nextDouble();
-	                    invoice.setPrice(price);
+	                    item.setPrice(price);
 	                    System.out.print("Enter quantity: ");
 	                    int qty = sc.nextInt();
-	                    invoice.setQty(qty);
+	                    item.setQty(qty);
+	                    invoice.customerInfo.itemlist.add(item);
 	                    break;
 	                case 3:
 	                    System.out.print("Enter item ID to remove: ");
-	                    invoice.removeItem(sc.nextLine());
+	                    int a = sc.nextInt();
+	                    invoice.customerInfo.removeItem(a);
 	                    break;
 	                case 4:
 	                    System.out.print("Enter item ID to update: ");
-	                    id = sc.nextLine();
+	               //     id = sc.nextLine();
 	                    System.out.print("Enter new quantity: ");
 	                    qty = sc.nextInt();
-	                    invoice.updateItem(id, qty);
+	                //    invoice.updateItem(id, qty);
 	                    break;
 	                case 5:
-	                    invoice.printInvoice();
+	               //     invoice.printInvoice();
 	                    break;
 	                case 6:
 	                    return;
 	            }
-	            item.add(invoice);
+	           // item.add(invoice);
 	        }
 		
 		
