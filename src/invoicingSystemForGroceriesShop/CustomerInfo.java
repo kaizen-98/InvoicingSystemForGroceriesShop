@@ -27,27 +27,32 @@ public class CustomerInfo {
 	 public void RemoveItem() {
 		  System.out.print("Enter item ID to remove !!: ");
 		  int a = sc.nextInt();
-		  for (Item i : itemlist) {
-			  if(i.equals(a)) {
-				  itemlist.remove(a); 
-			  }
-		  }
-		  System.out.print(" Removed:Successfuly\n ");
+		  for (int i = 0; i < itemlist.size(); i++) {
+	            if (itemlist.get(i).equals(a)) {
+	            	itemlist.remove(i);
+	            }}
+//		  for (Item i : itemlist) {
+//			  if(i.equals(a)) {
+//				  itemlist.remove(a); 
+//			  }
+//		  }
+//		  System.out.print(" Removed:Successfuly\n ");
        
 	 }
-	 public int Update(int p,int o) {
-		  System.out.print("Enter item ID to update: ");
-          int b = sc.nextInt();
-          item=itemlist.get(b); 
-          for (Item i : itemlist) {
-			  if(i.equals(item)) {
-				  System.out.print("The old price: "+i.price);
-		          System.out.print("Enter the new price: ");
-		          b = sc.nextInt();
-		          item.price=b;
-		          itemlist.set(b, item);
-			  }
-          }
+	 public void Update() {
+		
+		 
+		 
+//          item=itemlist.get(b); 
+//          for (Item i : itemlist) {
+//			  if(i.equals(item)) {
+//				  System.out.print("The old price: "+i.price);
+//		          System.out.print("Enter the new price: ");
+//		          b = sc.nextInt();
+//		          item.price=b;
+//		          itemlist.set(b, item);
+//			  }
+//          }
         
 	 }
 	 public void printItem() {
