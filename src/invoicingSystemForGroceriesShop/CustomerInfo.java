@@ -1,48 +1,62 @@
 package invoicingSystemForGroceriesShop;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CustomerInfo {
 
 
-	private String customerName;
-	private int phoneNumber;
-	private int invoiceDate;
-		Item item = new Item();
-	  ArrayList<Item> itemlist = new ArrayList<Item>();
+	 String customerName;
+	 int phoneNumber;
+	 int invoiceDate;
+	 Scanner sc = new Scanner(System.in);
+	 Item item = new Item();
+	 ArrayList<Item> itemlist = new ArrayList<Item>();
 	  
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-	public String getCustomerName() {
-		return customerName;
-	}
-
-	
-	  public int getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(int phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-	public int getInvoiceDate() {
-		return invoiceDate;
-	}
-
-	public void setInvoiceDate(int invoiceDate) {
-		this.invoiceDate = invoiceDate;
-	}
-
-	public void removeItem(int a) {
-		  itemlist.remove(a);
-		  return;
-	  }
-	public int update(int b) {
-		item = itemlist.get(b);
-		return b;
-	}
-	
+   
+	 public void AddCustomer() {
+		 System.out.print("Enter customer full name: ");
+		 customerName = sc.next();
+         System.out.print("Enter customer phone number: ");
+          phoneNumber = sc.nextInt();
+         System.out.print("Enter invoice date: ");
+          invoiceDate = sc.nextInt();
+        
+	 }
+	 
+	 public void RemoveItem() {
+		  System.out.print("Enter item ID to remove !!: ");
+		  int a = sc.nextInt();
+		  for (Item i : itemlist) {
+			  if(i.equals(a)) {
+				  itemlist.remove(a); 
+			  }
+		  }
+		  System.out.print(" Removed:Successfuly\n ");
+       
+	 }
+	 public int Update(int p,int o) {
+		  System.out.print("Enter item ID to update: ");
+          int b = sc.nextInt();
+          item=itemlist.get(b); 
+          for (Item i : itemlist) {
+			  if(i.equals(item)) {
+				  System.out.print("The old price: "+i.price);
+		          System.out.print("Enter the new price: ");
+		          b = sc.nextInt();
+		          item.price=b;
+		          itemlist.set(b, item);
+			  }
+          }
+        
+	 }
+	 public void printItem() {
+		 for (Item i : itemlist) {
+			 System.out.println(i.name);
+			 System.out.println(i.ItemsiD);
+			 System.out.println(i.numberOfItems);
+			 System.out.println(i.price);
+			 System.out.println(i.qty);
+		 }
+	 }
 }
