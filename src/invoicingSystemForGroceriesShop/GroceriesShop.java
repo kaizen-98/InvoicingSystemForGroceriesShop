@@ -15,9 +15,10 @@ public class GroceriesShop {
 			System.out.println("2. Enter customer information");
 			System.out.println("3. Add item to invoice");
 			System.out.println("4. Remove item from invoice");
-			System.out.println("5. Update item quantity");
-			System.out.println("6. Print invoice");
-			System.out.println("7. Exit");
+			System.out.println("5. Update item price");
+			System.out.println("6. calculate price");
+			System.out.println("7. Print invoice");
+			System.out.println("8. Exit");
 
 			int choice = sc.nextInt();
 
