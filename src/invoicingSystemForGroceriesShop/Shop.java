@@ -9,23 +9,28 @@ public class Shop implements Serializable{
 	Scanner sc = new Scanner(System.in);
 	String ShopName;
 	int adress;
+	String Email;
 	CustomerInfo customerInfo = new CustomerInfo();
 	ArrayList<CustomerInfo> CustomerList = new ArrayList<CustomerInfo>();
 	
 	
 	
 	public void AddShop() {
-		 System.out.print("Shop Settings: ");
+		 System.out.print("Shop Settings: \n");
 		 System.out.print("Enter Shop name: ");
 		 ShopName = sc.next();
 		 System.out.print("Enter Shop adress: ");
 		 adress = sc.nextInt();
+		 System.out.print("Enter Shop Email: ");
+		 Email = sc.next();
 	}
 	
 	
 	public void printShop() {
 		System.out.println(ShopName);
 		System.out.println(adress);
+		System.out.println(Email);
+		
 	}
 	
 	 public void printCustomer() {
