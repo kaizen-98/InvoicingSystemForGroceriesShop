@@ -1,5 +1,8 @@
 package invoicingSystemForGroceriesShop;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -13,13 +16,18 @@ public class CustomerInfo implements Serializable {
 	Item item = new Item();
 	ArrayList<Item> itemlist = new ArrayList<Item>();
 
-	public void AddCustomer() {
+	public void AddCustomer() throws IOException {
 		System.out.print("Enter customer full name: ");
 		customerName = sc.next();
 		System.out.print("Enter customer phone number: ");
 		phoneNumber = sc.nextInt();
 		System.out.print("Enter invoice date: ");
 		invoiceDate = sc.nextInt();
+		BufferedWriter writer = new BufferedWriter(new FileWriter("Customerinfo.txt"));
+		writer.write(customerName);
+		writer.write(phoneNumber);
+		writer.write(invoiceDate);
+		writer.close();
 
 	}
 

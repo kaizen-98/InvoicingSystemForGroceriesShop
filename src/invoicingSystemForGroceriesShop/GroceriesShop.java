@@ -1,13 +1,16 @@
 package invoicingSystemForGroceriesShop;
 
+import java.io.BufferedWriter;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GroceriesShop {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		Scanner sc = new Scanner(System.in);
 		Shop shop = new Shop();
@@ -29,6 +32,7 @@ public class GroceriesShop {
 			case 1:
 
 				shop.AddShop();
+
 				break;
 			case 2:
 
@@ -56,11 +60,11 @@ public class GroceriesShop {
 
 				break;
 			case 7:
-				System.out.println("1. Shop Details \n ");
+				System.out.println("1.Shop Details \n ");
 				shop.printShop();
 				System.out.println("2.Customer Details \n");
 				shop.printCustomer();
-				System.out.println("3. Item Details \n");
+				System.out.println("3.Item Details \n");
 				shop.customerInfo.printItem();
 				break;
 			case 8:
