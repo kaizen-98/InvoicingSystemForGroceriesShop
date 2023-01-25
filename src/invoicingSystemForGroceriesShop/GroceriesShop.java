@@ -14,14 +14,14 @@ public class GroceriesShop {
 		CustomerInfo customerInfo = new CustomerInfo();
 		Item item = new Item();
 		while (true) {
-			System.out.println("1. Enter Shop information");
-			System.out.println("2. Enter customer information");
-			System.out.println("3. Add item to invoice");
-			System.out.println("4. Remove item from invoice");
-			System.out.println("5. Update item price");
-			System.out.println("6. calculate price");
-			System.out.println("7. Print invoice");
-			System.out.println("8. Exit");
+			System.out.println("1. Enter Shop information!");
+			System.out.println("2. Enter customer information!");
+			System.out.println("3. Add item to invoice!");
+			System.out.println("4. Remove item from invoice!");
+			System.out.println("5. Update item price!");
+			System.out.println("6. Calculate price!");
+			System.out.println("7. Print  All invoice!");
+			System.out.println("8. Exit!");
 
 			int choice = sc.nextInt();
 
@@ -56,22 +56,16 @@ public class GroceriesShop {
 
 				break;
 			case 7:
+				System.out.println("1. Shop Details \n ");
+				shop.printShop();
+				System.out.println("2.Customer Details \n");
 				shop.printCustomer();
+				System.out.println("3. Item Details \n");
 				shop.customerInfo.printItem();
 				break;
 			case 8:
+				System.out.println("Thanks for Using our services");
 				return;
-			}
-
-			try {
-				FileOutputStream file = new FileOutputStream("\\Users\\Lenovo\\Desktop\\Java101\\customerInfo11.txt");
-				ObjectOutputStream out = new ObjectOutputStream(file);
-				out.writeObject(customerInfo);
-				out.close();
-				file.close();
-				System.out.println("Serialized and Saved");
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
 
 		}
