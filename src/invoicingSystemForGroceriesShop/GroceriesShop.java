@@ -1,5 +1,7 @@
 package invoicingSystemForGroceriesShop;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -31,15 +33,36 @@ public class GroceriesShop {
 
 				customerInfo.AddCustomer();
 				shop.CustomerList.add(customerInfo);
+				try {
+					FileOutputStream file = new FileOutputStream("\\Users\\Lenovo\\Desktop\\Java101\\customerInfo.txt"); 
+					ObjectOutputStream out = new ObjectOutputStream(file);
+					out.writeObject(customerInfo);
+					out.close();
+					file.close();
+					System.out.println("Serialized and Saved");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				break;
 			case 3:
 				Item item = new Item();
 				item.AddItem();
 				shop.customerInfo.itemlist.add(item);
+				try {
+					FileOutputStream file = new FileOutputStream("\\Users\\Lenovo\\Desktop\\Java101\\item.txt"); 
+					ObjectOutputStream out = new ObjectOutputStream(file);
+					out.writeObject(item);
+					out.close();
+					file.close();
+					System.out.println("Serialized and Saved");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				break;
 			case 4:
 				shop.customerInfo.RemoveItem();
 				break;
+
 			case 5:
 				System.out.print("Enter item ID to update: ");
 				int b = sc.nextInt();
@@ -47,13 +70,18 @@ public class GroceriesShop {
 				shop.CustomerList.add(customerInfo);
 				break;
 			case 6:
+				shop.customerInfo.item.invoice.calculate();
+				
+				break;
+			case 7:
 				shop.printCustomer();
 				shop.customerInfo.printItem();
 				break;
-			case 7:
+			case 8:
 				return;
 			}
 
+			
 		}
 
 	}

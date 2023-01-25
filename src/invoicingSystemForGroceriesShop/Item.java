@@ -1,9 +1,10 @@
 package invoicingSystemForGroceriesShop;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Item {
+public class Item implements Serializable{
 
 	 String name;
 	 int ItemsiD;
