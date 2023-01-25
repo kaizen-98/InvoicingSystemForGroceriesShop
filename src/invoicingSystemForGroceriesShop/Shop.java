@@ -15,6 +15,7 @@ public class Shop implements Serializable{
 	
 	
 	public void AddShop() {
+		 System.out.print("Shop Settings: ");
 		 System.out.print("Enter Shop name: ");
 		 ShopName = sc.next();
 		 System.out.print("Enter Shop adress: ");
